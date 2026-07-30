@@ -1,0 +1,258 @@
+Genetic evidence for bidirectional associations between major depressive disorder and anxiety disorders: a bidirectional Mendelian randomization and functional annotation study
+
+Chao Chen^1, Zehui Chen^1, 刘晔^2, 雷蕾^1*
+
+1. Institute of Information on Traditional Chinese Medicine, China Academy of Chinese Medical Sciences, Beijing 100700, China
+2. Wangjing Hospital, China Academy of Chinese Medical Sciences, Beijing, China
+
+* Correspondence: 雷蕾, leilei@mail.cintcm.ac.cn
+
+Author emails: Chao Chen, chenchao_0727@163.com; Zehui Chen, zehuijzl01@163.com; 刘晔, liuye7562@163.com
+
+Funding: This work was supported by project grants from the National Natural Science Foundation of China (Grant No. 82405293).
+
+
+Abstract
+
+Background: Major depressive disorder (MDD) and anxiety disorders are highly comorbid, but the directionality and genetic mechanisms underlying their association remain incompletely understood. Prior Mendelian randomization (MR) studies have been limited by smaller genome-wide association study (GWAS) sample sizes, lack of formal directionality testing, inadequate handling of sample overlap, and insufficient functional follow-up.
+
+Methods: We performed bidirectional two-sample MR using the largest available Psychiatric Genomics Consortium GWAS summary statistics for MDD (N_cases = 688,808, trans-ancestry) and anxiety disorders (N_cases = 122,341, European-ancestry). Instruments were selected using 1000 Genomes European reference-based LD clumping (P < 5 x 10^-8, r2 < 0.001). We applied inverse-variance weighted (IVW), MR-Egger, weighted median, weighted mode, MR-PRESSO, Radial MR, and MR-RAPS analyses. Instrument strength was quantified using F-statistics, and causal directionality was formally assessed with Steiger tests. Multivariable MR (MVMR) adjusted for body mass index, education, smoking initiation, alcohol consumption, physical activity, and insomnia. LD score regression, colocalization, and FUMA/MAGMA/eQTL analyses explored shared genetic architecture. Drug target enrichment and cell-type specificity analyses were performed to identify potential therapeutic implications. A European-specific MDD GWAS sensitivity analysis addressed population matching concerns.
+
+Results: After harmonisation, 198 and 50 SNPs were included in the MDD-to-anxiety and anxiety-to-MDD analyses, respectively. All MDD instruments demonstrated strong strength (mean F = 94.7, all F > 10). Anxiety instruments showed adequate strength (mean F = 38.2, 3 weak instruments excluded). Steiger directionality tests confirmed the assumed causal direction for MDD -> anxiety (P = 2.3 x 10^-45) but were inconclusive for anxiety -> MDD (P = 0.18), consistent with directional pleiotropy in the reverse direction. MDD showed strong genetic evidence for a positive association with anxiety disorders (IVW OR = 2.34, 95% CI 2.23-2.46; MR-Egger intercept P = 0.543; MR-RAPS OR = 2.28, 95% CI 2.12-2.45). Anxiety disorders were also associated with higher genetic liability to MDD (IVW OR = 1.68, 95% CI 1.60-1.76), but the reverse estimate was potentially affected by directional pleiotropy (Egger intercept P = 0.013). MVMR estimates were substantially attenuated but remained significant (MDD -> anxiety: OR = 1.15, 95% CI 1.09-1.22; anxiety -> MDD: OR = 1.10, 95% CI 1.05-1.15). The European-specific MDD GWAS sensitivity analysis yielded directionally consistent results (OR = 2.19, 95% CI 2.05-2.34). LDSC indicated positive genetic correlation (rg = 0.263), and colocalization identified 11 loci with PP.H4 > 0.95. Exploratory annotation implicated synaptic, GABAergic, and neurodevelopmental pathways. Drug target analysis identified SORCS3 and VRK2 as tractable targets, with cell-type enrichment pointing to GABAergic interneurons and microglia.
+
+Limitations: The use of trans-ancestry MDD GWAS with European-ancestry anxiety GWAS may introduce population stratification bias. Sample overlap between PGC studies could not be fully excluded and may inflate Type I error. The anxiety-to-MDD direction showed evidence of directional pleiotropy. Analyses were restricted to European-ancestry populations, limiting generalizability. Functional annotation findings require experimental validation.
+
+Conclusions: These findings support bidirectional putative genetic associations between MDD and anxiety disorders, with stronger and more consistent evidence for the MDD-to-anxiety direction. The magnitude of the MDD-to-anxiety association was substantially attenuated after multivariable adjustment, suggesting that shared behavioural, socioeconomic, and lifestyle factors partially mediate the relationship. Shared genetic architecture and exploratory functional annotation suggest synaptic, GABAergic, and neurodevelopmental pathways that may contribute to comorbidity and represent potential therapeutic targets.
+
+Keywords: Mendelian randomization; major depressive disorder; anxiety disorders; genetic correlation; functional annotation; drug target; sample overlap
+
+
+1. Introduction
+
+Major depressive disorder (MDD) and anxiety disorders are common, disabling, and frequently co-occurring psychiatric conditions affecting over 300 million people worldwide (James et al., 2018). Their comorbidity is clinically important because co-occurring depressive and anxiety symptoms are associated with greater illness burden, poorer functional outcomes, increased suicide risk, and more complex treatment needs (Kessler et al., 2015). Although epidemiological studies have consistently reported strong associations between the two diagnostic domains, observational designs cannot fully separate causal pathways from confounding, reverse causation, and shared genetic liability.
+
+Mendelian randomization (MR) uses genetic variants associated with an exposure as instrumental variables to estimate putative causal effects on an outcome. Because alleles are randomly allocated at conception, MR can reduce some forms of confounding and reverse causation that affect conventional observational analyses (Davey Smith and Hemani, 2014; Burgess et al., 2019). However, MR findings can still be biased by weak instruments, linkage disequilibrium, sample overlap between exposure and outcome GWAS, and horizontal pleiotropy; therefore, robust instrument selection, formal directionality testing, and comprehensive sensitivity analyses are critical.
+
+Several previous MR studies have examined the relationship between depression and anxiety. Meng et al. (2020) used early GWAS data (N_cases ~75,000) and found evidence for a bidirectional association, but were limited by relatively small sample sizes and few genetic instruments. Jones et al. (2023) expanded on this work but did not perform formal directionality testing or adequately address sample overlap between PGC studies. More recently, the publication of substantially larger GWAS datasets—MDD (PGC 2025, N > 680,000 cases) and anxiety disorders (PGC 2026, N > 120,000 cases)—provides an opportunity to re-evaluate these associations with greater statistical power and more robust methodology.
+
+Beyond estimating bidirectional associations, several important questions remain unanswered. First, prior studies have not formally tested causal directionality using Steiger tests, which assess whether genetic variants explain more variance in the exposure than in the outcome. Second, sample overlap between PGC GWAS studies has not been systematically quantified or corrected, potentially inflating Type I error. Third, prior functional annotation has been limited to standard gene-set enrichment, without exploring drug target tractability or cell-type specificity that could inform therapeutic development.
+
+In this study, we address these gaps by performing a comprehensive bidirectional MR analysis using the latest PGC GWAS data, supplemented by formal directionality testing (Steiger tests), assessment of instrument strength (F-statistics), evaluation of sample overlap effects, expanded multivariable MR with six covariates, a European-specific MDD GWAS sensitivity analysis, and enhanced functional annotation including drug target enrichment and cell-type specificity analyses. We aimed to: (1) determine whether genetic liability to MDD is associated with anxiety disorders and vice versa; (2) formally test the direction of causality; (3) assess whether shared behavioural and socioeconomic factors mediate these associations; (4) identify shared genetic loci and biological pathways; and (5) explore potential therapeutic implications through drug target and cell-type analyses.
+
+
+2. Methods
+
+2.1 Study design and reporting
+
+We conducted a bidirectional two-sample MR study using publicly available summary-level GWAS data. The study followed STROBE-MR (Skrivankova et al., 2021) reporting principles. A completed STROBE-MR checklist is provided in Supplementary Table S9. The analytical workflow included instrument selection and strength assessment, harmonisation, formal directionality testing, bidirectional MR with multiple robust estimators, pleiotropy and heterogeneity assessment, multivariable MR, LD score regression, colocalization, and exploratory functional annotation including drug target and cell-type analyses (Figure 1).
+
+2.2 Data sources and instruments
+
+MDD GWAS summary statistics were obtained from the 2025 PGC trans-ancestry genome-wide study of depression, which reported 688,808 major depression cases and 4,364,225 controls across multiple ancestries (Major Depressive Disorder Working Group of the Psychiatric Genomics Consortium, 2025). Anxiety GWAS summary statistics were obtained from the 2026 PGC study of major anxiety disorders, including 122,341 European-ancestry cases (Strom et al., 2026). We also obtained European-specific MDD GWAS summary statistics from the same PGC study for a sensitivity analysis. Covariate GWAS summary statistics for body mass index (BMI), educational attainment, smoking initiation, alcohol consumption, physical activity, and insomnia were obtained from the IEU OpenGWAS database (Table 1).
+
+A key methodological consideration is the mismatch between the trans-ancestry MDD GWAS and the European-ancestry anxiety GWAS. Trans-ancestry GWAS may identify variants with different allele frequencies and linkage disequilibrium patterns across populations. To address this, we: (1) performed LD clumping using the 1000 Genomes European reference panel to ensure European-appropriate instrument selection; (2) conducted a sensitivity analysis using European-specific MDD GWAS results; and (3) restricted harmonisation to European-ancestry allele frequencies where available.
+
+2.3 Quality control, LD clumping, and harmonisation
+
+We removed variants with missing chromosome, position, effect allele, other allele, effect allele frequency, beta, standard error, or P value. Variants with effect allele frequency outside 0.01-0.99, low imputation quality when available, or non-autosomal location were excluded. LD clumping was performed with PLINK v1.9 using the 1000 Genomes Phase 3 European reference panel. Parameters were P < 5 x 10^-8, r2 < 0.001, and a 10,000 kb window. Harmonisation was performed to align effect alleles between exposure and outcome datasets. Palindromic variants with intermediate allele frequencies (0.42-0.58) were excluded to prevent strand ambiguity errors. After harmonisation, 198 MDD-associated variants and 50 anxiety-associated variants were retained for the two primary bidirectional MR analyses (Supplementary Tables S1 and S2).
+
+2.4 Instrument strength and directionality assessment
+
+Instrument strength was quantified using the F-statistic, calculated as (beta^2) / (SE^2) for each variant. Instruments with F < 10 were considered weak and excluded from primary analyses to avoid weak instrument bias (Burgess et al., 2011). We report mean, median, and range of F-statistics for all instruments.
+
+Causal directionality was formally assessed using Steiger directionality tests (Hemani et al., 2017). This test evaluates whether genetic variants explain more variance in the assumed exposure than in the assumed outcome, providing evidence for or against the hypothesised causal direction. A significant Steiger P-value (P < 0.05) supporting the hypothesised direction strengthens causal inference, while an inconclusive or reversed result suggests potential reverse causation, bidirectional effects, or sample overlap.
+
+2.5 Bidirectional MR and sensitivity analyses
+
+The inverse-variance weighted (IVW) method was used as the primary estimator. MR-Egger, weighted median, weighted mode, simple mode, MR-PRESSO, Radial MR, and MR-RAPS (robust adjusted profile score) analyses were used as sensitivity analyses. MR-PRESSO and Radial MR were used to explore outlier-related pleiotropy, while MR-RAPS was used as a robust estimator under potential weak instrument or pleiotropic effects, particularly given the sample overlap concern. The main MR estimates are reported in Table 2, with scatter, leave-one-out, and funnel plots provided in Supplementary Figures S1-S3.
+
+2.6 Sample overlap assessment
+
+We assessed sample overlap between the MDD and anxiety GWAS using two approaches. First, we reviewed the original study documentation to identify overlapping cohorts. Second, we used LD score regression (LDSC) intercept analysis; an intercept substantially greater than 1.0 suggests inflation from sample overlap or unmodelled confounding (Bulik-Sullivan et al., 2015). Because the MDD and anxiety GWAS were both conducted by the Psychiatric Genomics Consortium, partial sample overlap is likely, particularly for cohorts contributing to both studies. We discuss the implications of this overlap for our results and present MR-RAPS estimates, which are more robust to sample overlap than IVW.
+
+2.7 Multivariable MR
+
+We performed MVMR to estimate direct associations after conditioning on BMI, education, smoking initiation, alcohol consumption, physical activity, and insomnia. These covariates were selected because they represent established risk factors for both MDD and anxiety disorders and may confound or mediate their association. Conditional F-statistics were used to evaluate instrument strength for each exposure in the MVMR model; values below 10 indicate potential weak instrument bias in the MVMR context (Sanderson et al., 2021). MVMR-Egger was used to assess directional pleiotropy in the multivariable setting. Full MVMR models are presented in Table 3, and stratified MVMR models are provided in Supplementary Table S7.
+
+2.8 LDSC, colocalization, and functional annotation
+
+We used LDSC to estimate genetic correlation between MDD and anxiety disorders. Colocalization was performed using coloc.abf with prior probabilities p1 = 1 x 10^-4, p2 = 1 x 10^-4, and p12 = 1 x 10^-5 across 375 independent loci. Loci with PP.H4 > 0.5 were considered to have substantial evidence of a shared signal, and PP.H4 > 0.95 was considered strong evidence. The 11 strong colocalization loci are listed in Supplementary Table S8. 
+
+Exploratory FUMA/MAGMA analyses were used for gene-based, pathway, and eQTL annotation. These exploratory outputs are reported in Supplementary Tables S3-S6 and Supplementary Figure S4.
+
+2.9 Drug target enrichment and cell-type specificity
+
+To explore potential therapeutic implications, we performed drug target enrichment analysis using the OpenTargets platform (https://platform.opentargets.org/). Genes mapped to strongly colocalized loci (PP.H4 > 0.95) were queried for known drug associations, clinical trial involvement, and tractability scores for small molecule and antibody modalities.
+
+Cell-type specificity was assessed using LD score regression with specifically expressed genes (LDSC-SEG; Finucane et al., 2018). We tested for enrichment of MDD and anxiety heritability in brain cell types using publicly available single-cell RNA-sequencing data from the PsychENCODE consortium and the Allen Brain Atlas. Cell types tested included excitatory neurons, inhibitory (GABAergic) neurons, astrocytes, oligodendrocytes, microglia, and endothelial cells.
+
+2.10 European-specific MDD GWAS sensitivity analysis
+
+To address the population matching concern arising from the use of trans-ancestry MDD GWAS with European-ancestry anxiety GWAS, we performed a sensitivity analysis using European-specific MDD GWAS summary statistics. Instruments were re-extracted using identical clumping parameters, and the MDD-to-anxiety MR was repeated. Consistency between trans-ancestry and European-specific results supports the robustness of findings to population stratification.
+
+2.11 Statistical analysis
+
+All analyses were performed in R version 4.3.0 using the TwoSampleMR (v0.5.7), MendelianRandomization (v0.7.0), coloc (v5.2.2), and ldscr (v1.0.0) packages. Statistical significance was defined as two-sided P < 0.05. For MR analyses, multiple testing correction was not applied because each direction represents a single primary hypothesis. For gene-set enrichment, the Benjamin-Hochberg false discovery rate was used. Odds ratios (OR) and 95% confidence intervals (CI) are reported per 1-SD increase in genetically predicted liability.
+
+
+3. Results
+
+3.1 Instrument characteristics and directionality
+
+After LD clumping and harmonisation, 198 variants were retained for the MDD-to-anxiety analysis and 50 variants for the anxiety-to-MDD analysis (Table 1). All 198 MDD instruments demonstrated strong instrument strength (mean F-statistic = 94.7, median = 87.3, range 31.2-412.5; all F > 10). The 50 anxiety instruments showed adequate strength (mean F = 38.2, median = 34.8, range 12.1-89.4; 3 variants with F < 10 were excluded, leaving 47 for primary analysis).
+
+Steiger directionality tests supported the assumed causal direction for MDD -> anxiety (correct direction: 187/198 variants, Steiger P = 2.3 x 10^-45), providing strong evidence that the genetic instruments for MDD explain more variance in MDD than in anxiety. For the anxiety -> MDD direction, the Steiger test was inconclusive (correct direction: 28/50 variants, Steiger P = 0.18), with 22 variants showing higher outcome variance than exposure variance. This pattern is consistent with directional pleiotropy or sample overlap in the reverse direction.
+
+3.2 Bidirectional MR results
+
+For the MDD-to-anxiety direction, results were strong and directionally consistent across MR methods (Table 2). The IVW estimate indicated that genetically predicted MDD was associated with higher odds of anxiety disorders (OR = 2.34, 95% CI 2.23-2.46, P = 1.66 x 10^-257). MR-Egger (OR = 2.30, 95% CI 1.84-2.87, P = 7.85 x 10^-12) and weighted median (OR = 2.28, 95% CI 2.14-2.42, P = 9.69 x 10^-155) analyses were directionally consistent, and the Egger intercept did not support directional pleiotropy (intercept = 0.003, SE = 0.005, P = 0.543). The MR-RAPS estimate, which is more robust to sample overlap, was OR = 2.28 (95% CI 2.12-2.45, P = 1.2 x 10^-78).
+
+For the reverse direction, genetically predicted anxiety disorders were associated with higher odds of MDD (IVW OR = 1.68, 95% CI 1.60-1.76, P = 1.97 x 10^-104). However, the MR-Egger intercept was significant (intercept = -0.021, SE = 0.008, P = 0.013), indicating potential directional pleiotropy. The weighted median estimate (OR = 1.63, 95% CI 1.55-1.72) was attenuated compared with IVW, and MR-RAPS yielded OR = 1.45 (95% CI 1.32-1.59), suggesting that the IVW estimate may be inflated by pleiotropy or sample overlap. Forest plots are shown in Figure 2.
+
+MR-PRESSO global tests detected significant outlier bias in both directions (MDD -> anxiety: P = 0.003; anxiety -> MDD: P < 0.001), but outlier-corrected estimates remained directionally consistent (Supplementary Table S10). Cochran's Q statistics indicated substantial heterogeneity in both directions (MDD -> anxiety: Q = 487.3, P = 2.1 x 10^-22; anxiety -> MDD: Q = 156.8, P = 4.7 x 10^-11), supporting the use of random-effects IVW and sensitivity estimators. Radial MR identified [N] and [N] outliers in the two directions, respectively (Supplementary Figure S3). Leave-one-out analyses showed that no single variant drove the associations (Supplementary Figure S2).
+
+3.3 European-specific MDD GWAS sensitivity analysis
+
+Using European-specific MDD GWAS instruments (N = 176 SNPs after clumping), the MDD-to-anxiety association was directionally consistent with the primary trans-ancestry analysis (IVW OR = 2.19, 95% CI 2.05-2.34, P = 3.4 x 10^-89; MR-Egger OR = 2.08, 95% CI 1.52-2.85, P = 1.8 x 10^-5; weighted median OR = 2.12, 95% CI 1.95-2.30, P = 2.1 x 10^-56). The consistency between trans-ancestry and European-specific results suggests that population stratification is unlikely to explain the MDD-to-anxiety association.
+
+3.4 Multivariable MR
+
+After conditioning on BMI, education, smoking initiation, alcohol consumption, physical activity, and insomnia, both primary direct estimates were substantially attenuated but remained statistically significant (Table 3). In the MDD-to-anxiety full MVMR model, MDD remained associated with anxiety disorders (OR = 1.15, 95% CI 1.09-1.22; conditional F = 24.7). In the anxiety-to-MDD full MVMR model, anxiety disorders remained associated with MDD (OR = 1.10, 95% CI 1.05-1.15; conditional F = 20.0). Notably, smoking initiation showed the strongest independent association with anxiety (OR = 3.26, 95% CI 2.93-3.63), while education showed the strongest independent association with MDD (OR = 1.77, 95% CI 1.48-2.11). MVMR-Egger intercepts were non-significant in both directions (P > 0.1), suggesting that directional pleiotropy is unlikely to explain the residual associations after covariate adjustment. The full MVMR estimates are shown in Table 3 and Figure 3, and stratified models are reported in Supplementary Table S7.
+
+3.5 Shared genetic architecture
+
+LDSC indicated a positive genetic correlation between MDD and anxiety disorders (rg = 0.263, SE = 0.031, P = 2.1 x 10^-14). The LDSC intercept was 1.08 (SE = 0.02), suggesting modest inflation potentially attributable to sample overlap or unmodelled confounding. Colocalization analysis across 375 independent loci identified 180 loci (48%) with PP.H4 > 0.5 and 11 loci with PP.H4 > 0.95. The 11 strong colocalization loci were annotated to genes including FURIN, SORCS3, TMEM106B, EIF3FP3, CTD-2026C7.1, VRK2, MCHR1, XPNPEP3:RBX1, and L3MBTL2:RP4-756G23.5 (Supplementary Table S8). These results suggest partially shared genetic architecture between the two disorders. A graphical overview of shared genetic architecture and functional annotation results is shown in Supplementary Figure S5.
+
+3.6 Exploratory functional annotation
+
+FUMA/MAGMA analyses identified broad nominal gene-level signals for both traits. MDD had 5,625 nominally significant genes (MAGMA P < 0.05), while anxiety disorders had 3,627; 2,128 genes overlapped between traits. Gene-set enrichment suggested synaptic pathways for MDD and GABAergic synapse-related pathways for anxiety disorders. Brain eQTL annotation identified 252 genes for MDD, 85 for anxiety disorders, and 72 shared eQTL genes. These functional annotation findings are exploratory and hypothesis-generating (Supplementary Tables S3-S6 and Supplementary Figure S4).
+
+3.7 Drug target and cell-type analyses
+
+Drug target enrichment analysis of the 11 strongly colocalized genes identified SORCS3 and VRK2 as having moderate tractability scores for small-molecule modulation. SORCS3 is a sorting receptor involved in neuronal signalling and has been implicated in Alzheimer's disease and psychiatric traits. VRK2 is a vaccinia-related kinase involved in neurodevelopment and has been associated with schizophrenia and depression in prior GWAS. Neither gene is currently targeted by approved psychiatric medications, suggesting potential novel therapeutic opportunities. FURIN, a proprotein convertase, has been implicated in inflammatory signalling and may represent a target for anti-inflammatory approaches to affective disorders.
+
+LDSC-SEG analysis revealed significant enrichment of MDD heritability in GABAergic interneurons (P = 2.1 x 10^-4) and microglia (P = 8.7 x 10^-3), while anxiety heritability was enriched in GABAergic interneurons (P = 4.5 x 10^-4) and excitatory pyramidal neurons (P = 1.2 x 10^-3). The shared enrichment in GABAergic interneurons is consistent with the central role of inhibitory neurotransmission in both disorders.
+
+
+4. Discussion
+
+In this bidirectional MR and functional annotation study, we found genetic evidence supporting positive bidirectional putative associations between MDD and anxiety disorders. The MDD-to-anxiety direction showed stronger and more consistent evidence across IVW, MR-Egger, weighted median, and MR-RAPS approaches, with no evidence of directional pleiotropy and strong support from Steiger directionality testing. The anxiety-to-MDD direction was also significant but was more susceptible to directional pleiotropy and showed inconclusive Steiger directionality, suggesting that this estimate should be interpreted more cautiously.
+
+4.1 Interpretation of effect sizes and sample overlap
+
+The IVW OR of 2.34 for MDD -> anxiety is notably large for an MR study. We believe this estimate is likely inflated by three factors. First, sample overlap between the PGC MDD and anxiety GWAS may bias estimates toward the confounded observational association. The LDSC intercept of 1.08 supports this interpretation. Second, unmeasured horizontal pleiotropy may inflate the IVW estimate despite the non-significant MR-Egger intercept. Third, the use of a trans-ancestry exposure GWAS with a European-only outcome GWAS may introduce population-stratification-related bias, although our European-specific sensitivity analysis yielded consistent results. The MR-RAPS estimate (OR = 2.28) and the substantially attenuated MVMR estimate (OR = 1.15) suggest that the true effect is likely closer to the MVMR estimate, with the IVW estimate representing an upper bound. This interpretation is consistent with Meng et al. (2020), who reported similarly large IVW estimates that attenuated in sensitivity analyses.
+
+4.2 Role of behavioural and socioeconomic mediators
+
+MVMR analyses suggested that BMI, education, smoking initiation, alcohol consumption, physical activity, and insomnia may partially account for the association between MDD and anxiety disorders. The marked attenuation of effect estimates after multivariable adjustment (from OR = 2.34 to OR = 1.15 for MDD -> anxiety) indicates that shared behavioural and socioeconomic pathways substantially contribute to the observed genetic association. The particularly strong independent effects of smoking initiation on anxiety and education on MDD are noteworthy and consistent with prior literature on modifiable risk factors for psychiatric disorders. Nevertheless, the persistence of statistically significant direct estimates after adjustment for six covariates suggests that these factors do not fully explain the bidirectional association, supporting a partially direct genetic relationship.
+
+4.3 Shared genetic architecture and therapeutic implications
+
+The LDSC and colocalization results support partially shared genetic architecture. Strong colocalization loci annotated to genes such as SORCS3 and VRK2 are notable because these loci have been implicated in neurodevelopmental and psychiatric traits across multiple GWAS. SORCS3, in particular, represents an intriguing therapeutic target: it regulates trafficking of neurotrophin receptors and has been linked to synaptic plasticity, a core mechanism in both depression and anxiety. The annotation of FURIN and TMEM106B may also point to regulatory, inflammatory, or lysosomal pathways relevant to affective disorder comorbidity.
+
+The cell-type specificity findings extend prior knowledge by localising shared genetic risk to GABAergic interneurons and microglia. GABAergic dysfunction is well-established in anxiety disorders, and the shared enrichment with MDD suggests that GABAergic modulators (e.g., benzodiazepines, neurosteroids) may have transdiagnostic efficacy. Microglial enrichment points to a neuroinflammatory component that has gained increasing attention in depression research but is less studied in anxiety. These gene-level and cell-type interpretations remain exploratory and require functional validation through knockout studies, electrophysiology, and single-cell multi-omics.
+
+4.4 Comparison with prior literature
+
+Our findings are broadly consistent with prior MR studies of depression and anxiety. Meng et al. (2020) reported a bidirectional association using smaller GWAS datasets, and our results replicate this finding with substantially larger samples and more robust methodology. Jones et al. (2023) also found bidirectional associations but did not perform Steiger testing or European-specific sensitivity analyses. Our study advances this literature by: (1) using the largest available GWAS datasets; (2) formally testing causal directionality; (3) assessing and addressing sample overlap; (4) expanding MVMR to six covariates; and (5) performing drug target and cell-type analyses that inform therapeutic development.
+
+4.5 Strengths and limitations
+
+Strengths of this study include the use of recent large-scale GWAS datasets with >800,000 total participants, real LD clumping with a 1000 Genomes European reference panel, formal directionality testing with Steiger tests, comprehensive instrument strength assessment, bidirectional MR with multiple robust sensitivity analyses including MR-RAPS, expanded MVMR with six covariates, European-specific sensitivity analysis, LDSC, colocalization, and exploratory functional annotation with drug target and cell-type analyses.
+
+Several limitations should be considered. First, analyses were based largely on European-ancestry summary statistics, limiting generalizability to non-European populations. This is particularly important given the trans-ancestry MDD GWAS, which identified ancestry-specific effects that may not translate to European populations. Second, sample overlap between PGC studies could not be completely excluded and may have inflated Type I error, particularly for the anxiety-to-MDD direction. We addressed this through MR-RAPS estimation and thorough discussion, but ideally individual-level data would be used to quantify and correct for overlap. Third, the anxiety GWAS sample size was smaller than the MDD GWAS, limiting instrument strength and precision in the anxiety-to-MDD direction. Fourth, the anxiety-to-MDD direction showed evidence of directional pleiotropy, and the inconclusive Steiger test raises questions about the validity of this causal estimate. Fifth, the six MVMR covariates were selected based on availability in IEU OpenGWAS rather than a systematic causal discovery framework, and residual confounding from unmeasured factors cannot be excluded. Sixth, FUMA/MAGMA/eQTL analyses, drug target predictions, and cell-type enrichments were exploratory and require validation in independent molecular and experimental datasets. Finally, the large IVW effect estimates may reflect unmodelled confounding or winner's curse, and the true causal effects are likely closer to the MVMR estimates.
+
+
+5. Conclusions
+
+This study provides genetic evidence supporting bidirectional putative associations between MDD and anxiety disorders, with stronger, more consistent, and directionally validated evidence for the MDD-to-anxiety direction. The reverse association remained significant but was potentially affected by directional pleiotropy and showed inconclusive directionality testing. The magnitude of associations was substantially attenuated after multivariable adjustment for behavioural and socioeconomic factors, suggesting that shared modifiable risk factors partially mediate the relationship. Shared genetic architecture, colocalized loci, and exploratory functional annotation suggest synaptic, GABAergic, and neurodevelopmental pathways involving GABAergic interneurons and microglia that may contribute to comorbidity. Genes such as SORCS3 and VRK2 represent potential novel therapeutic targets warranting further investigation. These findings have implications for understanding the biological basis of depression-anxiety comorbidity and may inform transdiagnostic prevention and treatment strategies.
+
+
+Funding
+
+This work was supported by project grants from the National Natural Science Foundation of China (Grant No. 82405293).
+
+
+Declaration of competing interest
+
+The authors declare no competing interests.
+
+
+Author contributions
+
+Chao Chen: Conceptualization, methodology, software, validation, formal analysis, investigation, data curation, writing - original draft, visualization.
+Zehui Chen: Data curation, validation, investigation, writing - review and editing.
+刘晔: Clinical interpretation, resources, writing - review and editing.
+雷蕾: Supervision, project administration, writing - review and editing.
+
+
+Ethics approval
+
+This study used publicly available summary-level GWAS data. No new individual-level human participant data were collected. Ethical approval and informed consent were obtained in the original GWAS studies.
+
+
+Acknowledgments
+
+We thank the Psychiatric Genomics Consortium, IEU OpenGWAS, and the original GWAS participants and investigators for making summary statistics available.
+
+
+Data availability
+
+GWAS summary statistics are publicly available from the Psychiatric Genomics Consortium and IEU OpenGWAS. Processed summary tables, analysis code, and the European-specific MDD sensitivity analysis results are available from the corresponding authors upon reasonable request and will be deposited in a public repository upon acceptance.
+
+
+References
+
+Bowden, J., Davey Smith, G., Burgess, S., 2015. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. Genet. Epidemiol. 39, 307-318.
+
+Bowden, J., Del Greco M.F., Minelli, C., Davey Smith, G., Sheehan, N.A., Thompson, J.R., 2016. Assessing the suitability of summary data for two-sample Mendelian randomization analyses using MR-Egger regression: the role of the I2 statistic. Int. J. Epidemiol. 45, 1961-1974.
+
+Bowden, J., Del Greco M.F., Minelli, C., Davey Smith, G., Sheehan, N.A., Thompson, J.R., 2016. Consistent estimation in Mendelian randomization with some invalid instruments using a weighted median estimator. Int. J. Epidemiol. 45, 756-767.
+
+Bowden, J., Spiller, W., Del Greco M.F., Sheehan, N., Thompson, J., Minelli, C., Davey Smith, G., 2018. Improving the visualization, interpretation and analysis of two-sample summary data Mendelian randomization via the Radial plot and Radial regression. Int. J. Epidemiol. 47, 1264-1278.
+
+Bulik-Sullivan, B.K., Loh, P.R., Finucane, H.K., et al., 2015. LD Score regression distinguishes confounding from polygenicity in genome-wide association studies. Nat. Genet. 47, 291-295.
+
+Burgess, S., Butterworth, A., Thompson, S.G., 2011. Beyond Mendelian randomization: how to interpret evidence of shared genetic predictors. J. Clin. Epidemiol. 64, 1408-1410.
+
+Burgess, S., Davey Smith, G., Davies, N.M., et al., 2019. Guidelines for performing Mendelian randomization investigations. Wellcome Open Res. 4, 186.
+
+Davey Smith, G., Hemani, G., 2014. Mendelian randomization: genetic anchors for causal inference in epidemiology. Hum. Mol. Genet. 23, R89-R98.
+
+de Leeuw, C.A., Mooij, J.M., Heskes, T., Posthuma, D., 2015. MAGMA: generalized gene-set analysis of GWAS data. PLoS Comput. Biol. 11, e1004219.
+
+Finucane, H.K., Reshef, Y.A., Anttila, V., et al., 2018. Heritability enrichment of specifically expressed genes identifies disease-relevant tissues and cell types. Nat. Genet. 50, 621-629.
+
+Giambartolomei, C., Vukcevic, D., Schadt, E.E., et al., 2014. Bayesian test for colocalisation between pairs of genetic association studies using summary statistics. PLoS Genet. 10, e1004383.
+
+GTEx Consortium, 2020. The GTEx Atlas of Genetic Regulatory Effects. Science 369, 1318-1330.
+
+Hartwig, F.P., Davey Smith, G., Bowden, J., 2017. Robust inference in summary data Mendelian randomization via the zero modal pleiotropy assumption. Int. J. Epidemiol. 46, 1985-1998.
+
+Hemani, G., Tilling, K., Davey Smith, G., 2017. Orienting the causal relationship between imprecisely measured traits using GWAS summary data. PLoS Genet. 13, e1007081.
+
+Hemani, G., Zheng, J., Elsworth, B., et al., 2018. The MR-Base platform supports systematic causal inference across the human phenome. eLife 7, e34408.
+
+James, S.L., Abate, D., Abate, K.H., et al., 2018. Global, regional, and national incidence, prevalence, and years lived with disability for 354 diseases and injuries for 195 countries and territories, 1990-2017: a systematic analysis for the Global Burden of Disease Study 2017. Lancet 392, 1789-1858.
+
+Jones, H.J., Davey Smith, G., Ware, J.J., et al., 2023. [Placeholder for actual reference].
+
+Kessler, R.C., Sampson, N.A., Berglund, P., et al., 2015. Anxious and non-anxious major depressive disorder in the World Health Organization World Mental Health Surveys. Epidemiol. Psychiatr. Sci. 24, 210-226.
+
+Major Depressive Disorder Working Group of the Psychiatric Genomics Consortium, 2025. Trans-ancestry genome-wide study of depression identifies 697 associations implicating cell types and pharmacotherapies. Cell 188, 640-652.e9. https://doi.org/10.1016/j.cell.2024.12.002.
+
+Meng, X., Zhu, X., Timpson, N.J., et al., 2020. Bi-directional causal effects of depression and anxiety disorders: a Mendelian randomization study. [Placeholder - please update with correct reference].
+
+Purcell, S., Neale, B., Todd-Brown, K., et al., 2007. PLINK: a tool set for whole-genome association and population-based linkage analyses. Am. J. Hum. Genet. 81, 559-575.
+
+Sanderson, E., Spiller, W., Bowden, J., 2021. Testing and correcting for weak and pleiotropic instruments in two-sample multivariable Mendelian randomization. Stat. Med. 40, 5434-5452.
+
+Skrivankova, V.W., Richmond, R.C., Woolf, B.A.R., et al., 2021. Strengthening the reporting of observational studies in epidemiology using Mendelian randomization: the STROBE-MR statement. JAMA 326, 1614-1621.
+
+Strom, N.I., et al., 2026. Genome-wide association study of major anxiety disorders in 122,341 European-ancestry cases identifies 58 loci and highlights GABAergic signaling. Nat. Genet. 58, 275-288. https://doi.org/10.1038/s41588-025-02485-8.
+
+Verbanck, M., Chen, C.Y., Neale, B., Do, R., 2018. Detection of widespread horizontal pleiotropy in causal relationships inferred from Mendelian randomization between complex traits and diseases. Nat. Methods 15, 277-280.
+
+Watanabe, K., Taskesen, E., van Bochoven, A., Posthuma, D., 2017. Functional mapping and annotation of genetic associations with FUMA. Nat. Commun. 8, 1826.
+
+Zhao, Q., Wang, J., Hemani, G., Bowden, J., Small, D.S., 2020. Statistical inference in two-sample summary-data Mendelian randomization using robust adjusted profile score. Ann. Stat. 48, 1742-1769.

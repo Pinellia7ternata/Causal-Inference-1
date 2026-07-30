@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 1800" width="2600" height="1800">
+  <!-- Figure 3: MVMR Forest Plot - Clean Layout -->
+  
+  <rect x="0" y="0" width="2600" height="1800" fill="white"/>
+  
+  <!-- ==================== TITLE ==================== -->
+  <text x="1300" y="80" font-family="Arial" font-size="40" font-weight="bold" fill="#1A5276" text-anchor="middle">Figure 3</text>
+  <text x="1300" y="140" font-family="Arial" font-size="30" fill="#2C3E50" text-anchor="middle">Multivariable MR estimates adjusted for BMI, education, and smoking initiation</text>
+
+  <!-- ============================================================ -->
+  <!-- PANEL A: MDD → Anxiety                                       -->
+  <!-- Left half: x=0..1250                                         -->
+  <!-- ============================================================ -->
+  
+  <!-- Panel A Title -->
+  <text x="625" y="240" font-family="Arial" font-size="34" font-weight="bold" fill="#2471A3" text-anchor="middle">Panel A: MDD → Anxiety</text>
+  <text x="625" y="280" font-family="Arial" font-size="24" fill="#717D7E" text-anchor="middle" font-style="italic">Conditional F = 24.7</text>
+
+  <!-- Column Headers -->
+  <text x="80" y="340" font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50">Exposure</text>
+  <text x="420" y="340" font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50">OR [95% CI]</text>
+  <text x="750" y="340" font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50">P-value</text>
+  
+  <!-- Forest plot area: x=900..1200, OR reference at x=1000 (OR=1) -->
+  <!-- OR scale: 1.0→x=920, 1.5→x=990, 2.0→x=1060, 2.5→x=1130, 3.0→x=1200 -->
+  <!-- Each 0.1 OR = 14px, so x = 920 + (OR-1.0)*140 -->
+
+  <!-- Reference line OR=1 (x=920) -->
+  <line x1="920" y1="360" x2="920" y2="700" stroke="#BDC3C7" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- X-axis ticks under forest area -->
+  <line x1="920" y1="700" x2="920" y2="715" stroke="#717D7E" stroke-width="2"/>
+  <text x="920" y="735" font-family="Arial" font-size="20" fill="#717D7E" text-anchor="middle">1.0</text>
+  <line x1="1060" y1="700" x2="1060" y2="715" stroke="#717D7E" stroke-width="2"/>
+  <text x="1060" y="735" font-family="Arial" font-size="20" fill="#717D7E" text-anchor="middle">2.0</text>
+  <line x1="1200" y1="700" x2="1200" y2="715" stroke="#717D7E" stroke-width="2"/>
+  <text x="1200" y="735" font-family="Arial" font-size="20" fill="#717D7E" text-anchor="middle">3.0</text>
+  <text x="1060" y="770" font-family="Arial" font-size="22" fill="#1A5276" text-anchor="middle">Odds Ratio</text>
+
+  <!-- Row 1: MDD (Primary) — OR=1.15, CI 1.09-1.22 -->
+  <!-- x_center = 920 + (1.15-1)*140 = 941, CI: 920+(1.09-1)*140=932.6 to 920+(1.22-1)*140=950.8 -->
+  <text x="80" y="420" font-family="Arial" font-size="26" font-weight="bold" fill="#2C3E50">MDD (Primary)</text>
+  <text x="420" y="420" font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50">1.15 [1.09, 1.22]</text>
+  <text x="750" y="420" font-family="Arial" font-size="24" fill="#A93226" font-weight="bold">6.71e-7 *</text>
+  <line x1="933" y1="416" x2="951" y2="416" stroke="#2471A3" stroke-width="5"/>
+  <circle cx="941" cy="416" r="8" fill="#2471A3"/>
+
+  <!-- Row 2: BMI — OR=1.32, CI 1.13-1.55 -->
+  <!-- x_center = 920 + 0.32*140 = 964.8, CI: 920+0.13*140=938.2 to 920+0.55*140=997 -->
+  <text x="80" y="500" font-family="Arial" font-size="26" fill="#2C3E50">BMI</text>
+  <text x="420" y="500" font-family="Arial" font-size="24" fill="#2C3E50">1.32 [1.13, 1.55]</text>
+  <text x="750" y="500" font-family="Arial" font-size="24" fill="#A93226" font-weight="bold">4.49e-4 *</text>
+  <line x1="938" y1="496" x2="997" y2="496" stroke="#5DADE2" stroke-width="5"/>
+  <circle cx="965" cy="496" r="8" fill="#5DADE2"/>
+
+  <!-- Row 3: Education — OR=1.26, CI 1.04-1.53 -->
+  <!-- x_center = 920 + 0.26*140 = 956.4, CI: 920+0.04*140=925.6 to 920+0.53*140=994.2 -->
+  <text x="80" y="580" font-family="Arial" font-size="26" fill="#2C3E50">Education</text>
+  <text x="420" y="580" font-family="Arial" font-size="24" fill="#2C3E50">1.26 [1.04, 1.53]</text>
+  <text x="750" y="580" font-family="Arial" font-size="24" fill="#A93226" font-weight="bold">0.021 *</text>
+  <line x1="926" y1="576" x2="994" y2="576" stroke="#1ABC9C" stroke-width="5"/>
+  <circle cx="956" cy="576" r="8" fill="#1ABC9C"/>
+
+  <!-- Row 4: Smoking — OR=3.26, CI 2.93-3.63 -->
+  <!-- x_center = 920 + 2.26*140 = 1236.4→clip to 1200, CI: 920+1.93*140=1190.2 to 920+2.63*140=1288.2→clip -->
+  <!-- Scale too large, use separate visual: dot at far right with arrow -->
+  <text x="80" y="660" font-family="Arial" font-size="26" fill="#2C3E50">Smoking Initiation</text>
+  <text x="420" y="660" font-family="Arial" font-size="24" fill="#2C3E50">3.26 [2.93, 3.63]</text>
+  <text x="750" y="660" font-family="Arial" font-size="24" fill="#A93226" font-weight="bold">4.18e-104 *</text>
+  <line x1="1190" y1="656" x2="1230" y2="656" stroke="#A93226" stroke-width="5"/>
+  <circle cx="1236" cy="656" r="8" fill="#A93226"/>
+  <!-- Arrow indicating extends beyond axis -->
+  <line x1="1238" y1="656" x2="1250" y2="648" stroke="#A93226" stroke-width="2"/>
+  <line x1="1238" y1="656" x2="1250" y2="664" stroke="#A93226" stroke-width="2"/>
+
+  <!-- ============================================================ -->
+  <!-- PANEL B: Anxiety → MDD                                       -->
+  <!-- Right half: x=1350..2600                                     -->
+  <!-- ============================================================ -->
+  
+  <!-- Panel B Title -->
+  <text x="1975" y="240" font-family="Arial" font-size="34" font-weight="bold" fill="#A93226" text-anchor="middle">Panel B: Anxiety → MDD</text>
+  <text x="1975" y="280" font-family="Arial" font-size="24" fill="#717D7E" text-anchor="middle" font-style="italic">Conditional F = 20.0</text>
+
+  <!-- Column Headers -->
+  <text x="1380" y="340" font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50">Exposure</text>
+  <text x="1720" y="340" font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50">OR [95% CI]</text>
+  <text x="2050" y="340" font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50">P-value</text>
+  
+  <!-- Forest plot area: x=2200..2500, OR reference at x=2220 (OR=1) -->
+  <!-- Scale: each 0.1 OR = 70px, so x = 2220 + (OR-1.0)*70 -->
+  <!-- OR=1→2220, OR=1.5→2570, OR=2.0→2920→out of range -->
+
+  <!-- Reference line OR=1 (x=2220) -->
+  <line x1="2220" y1="360" x2="2220" y2="700" stroke="#BDC3C7" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- X-axis ticks -->
+  <line x1="2220" y1="700" x2="2220" y2="715" stroke="#717D7E" stroke-width="2"/>
+  <text x="2220" y="735" font-family="Arial" font-size="20" fill="#717D7E" text-anchor="middle">1.0</text>
+  <line x1="2390" y1="700" x2="2390" y2="715" stroke="#717D7E" stroke-width="2"/>
+  <text x="2390" y="735" font-family="Arial" font-size="20" fill="#717D7E" text-anchor="middle">1.5</text>
+  <line x1="2560" y1="700" x2="2560" y2="715" stroke="#717D7E" stroke-width="2"/>
+  <text x="2560" y="735" font-family="Arial" font-size="20" fill="#717D7E" text-anchor="middle">2.0</text>
+  <text x="2390" y="770" font-family="Arial" font-size="22" fill="#1A5276" text-anchor="middle">Odds Ratio</text>
+
+  <!-- Row 1: Anxiety (Primary) — OR=1.10, CI 1.05-1.15 -->
+  <!-- x_center = 2220 + 0.10*70 = 2227, CI: 2220+0.05*70=2223.5 to 2220+0.15*70=2230.5 -->
+  <text x="1380" y="420" font-family="Arial" font-size="26" font-weight="bold" fill="#2C3E50">Anxiety (Primary)</text>
+  <text x="1720" y="420" font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50">1.10 [1.05, 1.15]</text>
+  <text x="2050" y="420" font-family="Arial" font-size="24" fill="#A93226" font-weight="bold">7.90e-6 *</text>
+  <line x1="2224" y1="416" x2="2231" y2="416" stroke="#A93226" stroke-width="5"/>
+  <circle cx="2227" cy="416" r="8" fill="#A93226"/>
+
+  <!-- Row 2: BMI — OR=1.00, CI 0.85-1.19 -->
+  <!-- x_center = 2220, CI: 2220-0.15*70=2209.5 to 2220+0.19*70=2233.3 -->
+  <text x="1380" y="500" font-family="Arial" font-size="26" fill="#2C3E50">BMI</text>
+  <text x="1720" y="500" font-family="Arial" font-size="24" fill="#2C3E50">1.00 [0.85, 1.19]</text>
+  <text x="2050" y="500" font-family="Arial" font-size="24" fill="#717D7E">0.983</text>
+  <line x1="2210" y1="496" x2="2233" y2="496" stroke="#717D7E" stroke-width="5"/>
+  <circle cx="2220" cy="496" r="8" fill="#717D7E"/>
+
+  <!-- Row 3: Education — OR=1.77, CI 1.48-2.11 -->
+  <!-- x_center = 2220 + 0.77*70 = 2273.9, CI: 2220+0.48*70=2253.6 to 2220+1.11*70=2297.7 -->
+  <text x="1380" y="580" font-family="Arial" font-size="26" fill="#2C3E50">Education</text>
+  <text x="1720" y="580" font-family="Arial" font-size="24" fill="#2C3E50">1.77 [1.48, 2.11]</text>
+  <text x="2050" y="580" font-family="Arial" font-size="24" fill="#A93226" font-weight="bold">1.89e-10 *</text>
+  <line x1="2254" y1="576" x2="2298" y2="576" stroke="#F39C12" stroke-width="5"/>
+  <circle cx="2274" cy="576" r="8" fill="#F39C12"/>
+
+  <!-- Row 4: Smoking — OR=1.02, CI 0.91-1.15 -->
+  <!-- x_center = 2220 + 0.02*70 = 2221.4, CI: 2220-0.09*70=2213.7 to 2220+0.15*70=2230.5 -->
+  <text x="1380" y="660" font-family="Arial" font-size="26" fill="#2C3E50">Smoking Initiation</text>
+  <text x="1720" y="660" font-family="Arial" font-size="24" fill="#2C3E50">1.02 [0.91, 1.15]</text>
+  <text x="2050" y="660" font-family="Arial" font-size="24" fill="#717D7E">0.742</text>
+  <line x1="2214" y1="656" x2="2231" y2="656" stroke="#717D7E" stroke-width="5"/>
+  <circle cx="2221" cy="656" r="8" fill="#717D7E"/>
+
+  <!-- ============================================================ -->
+  <!-- BOTTOM: Legend & Notes                                        -->
+  <!-- ============================================================ -->
+  
+  <!-- Dividing line between panels -->
+  <line x1="1300" y1="200" x2="1300" y2="800" stroke="#BDC3C7" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Legend -->
+  <rect x="400" y="850" width="1800" height="100" rx="15" ry="15" fill="#F8F9F9" stroke="#BDC3C7" stroke-width="2"/>
+  <text x="1300" y="890" font-family="Arial" font-size="24" fill="#2C3E50" text-anchor="middle">Legend:</text>
+  <circle cx="700" cy="920" r="8" fill="#2471A3"/>
+  <text x="720" y="926" font-family="Arial" font-size="22" fill="#2C3E50">MDD primary</text>
+  <circle cx="950" cy="920" r="8" fill="#A93226"/>
+  <text x="970" y="926" font-family="Arial" font-size="22" fill="#2C3E50">Anxiety primary</text>
+  <circle cx="1200" cy="920" r="8" fill="#5DADE2"/>
+  <text x="1220" y="926" font-family="Arial" font-size="22" fill="#2C3E50">BMI</text>
+  <circle cx="1400" cy="920" r="8" fill="#1ABC9C"/>
+  <text x="1420" y="926" font-family="Arial" font-size="22" fill="#2C3E50">Education</text>
+  <circle cx="1600" cy="920" r="8" fill="#F39C12"/>
+  <text x="1620" y="926" font-family="Arial" font-size="22" fill="#2C3E50">Education (B)</text>
+  <circle cx="1850" cy="920" r="8" fill="#717D7E"/>
+  <text x="1870" y="926" font-family="Arial" font-size="22" fill="#2C3E50">Non-significant</text>
+
+  <!-- Notes -->
+  <text x="1300" y="1020" font-family="Arial" font-size="22" fill="#717D7E" text-anchor="middle" font-style="italic">* P &lt; 0.05. Dashed line = OR = 1 (null hypothesis). CI = confidence interval.</text>
+  <text x="1300" y="1060" font-family="Arial" font-size="22" fill="#717D7E" text-anchor="middle" font-style="italic">MVMR estimates are exploratory sensitivity analyses; conditional F-statistics indicate adequate instrument strength.</text>
+
+  <!-- Key Finding Box -->
+  <rect x="300" y="1120" width="2000" height="120" rx="15" ry="15" fill="#EBF5FB" stroke="#2471A3" stroke-width="3"/>
+  <text x="1300" y="1170" font-family="Arial" font-size="24" font-weight="bold" fill="#1A5276" text-anchor="middle">Key Finding:</text>
+  <text x="1300" y="1210" font-family="Arial" font-size="22" fill="#2C3E50" text-anchor="middle">After adjusting for BMI, education, and smoking, MDD→Anxiety OR attenuated from 2.34 to 1.15, and Anxiety→MDD from 1.68 to 1.10,</text>
+  <text x="1300" y="1240" font-family="Arial" font-size="22" fill="#2C3E50" text-anchor="middle">but both remained statistically significant — supporting partially independent causal pathways.</text>
+
+</svg>

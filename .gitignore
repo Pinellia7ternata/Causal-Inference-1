@@ -1,0 +1,5 @@
+# Local / working artifacts
+*.bak*
+*.tmp
+_preview_check/
+docx_unpacked/

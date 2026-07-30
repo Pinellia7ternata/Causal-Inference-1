@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 1420" width="2200" height="1420">
+  <!-- Figure 2. Forest plot of bidirectional MR estimates (auto-generated; positions computed on a log10 OR axis) -->
+  <rect x="0" y="0" width="2200" height="1420" fill="#FFFFFF"/>
+  <text x="1100" y="104" font-family="Arial" font-size="44" font-weight="bold" fill="#1A5276" text-anchor="middle">Figure 2</text>
+  <text x="1100" y="168" font-family="Arial" font-size="32" fill="#2C3E50" text-anchor="middle">Forest plot of bidirectional Mendelian randomization estimates</text>
+  <text x="1100" y="216" font-family="Arial" font-size="32" fill="#2C3E50" text-anchor="middle">between major depressive disorder and anxiety disorders</text>
+  <rect x="110" y="438" width="2020" height="64" fill="#F4F6F7"/>
+  <rect x="110" y="602" width="2020" height="64" fill="#F4F6F7"/>
+  <rect x="110" y="828" width="2020" height="64" fill="#F4F6F7"/>
+  <text x="140" y="352" font-family="Arial" font-size="28" font-weight="bold" fill="#2C3E50">MR method</text>
+  <text x="560" y="352" font-family="Arial" font-size="28" font-weight="bold" fill="#2C3E50" text-anchor="middle">SNPs</text>
+  <text x="660" y="352" font-family="Arial" font-size="28" font-weight="bold" fill="#2C3E50">OR (95% CI)</text>
+  <text x="1090" y="352" font-family="Arial" font-size="28" font-weight="bold" fill="#2C3E50">P value</text>
+  <text x="1785" y="352" font-family="Arial" font-size="28" font-weight="bold" fill="#2C3E50" text-anchor="middle">OR (95% CI)</text>
+  <line x1="110" y1="370" x2="2130" y2="370" stroke="#2C3E50" stroke-width="3"/>
+  <line x1="1487.5" y1="382" x2="1487.5" y2="1058" stroke="#7F8C8D" stroke-width="3" stroke-dasharray="12,8"/>
+  <text x="120" y="426" font-family="Arial" font-size="34" font-weight="bold" fill="#1A5276">MDD → Anxiety disorders</text>
+  <text x="140" y="480" font-family="Arial" font-size="29" fill="#2C3E50">Inverse variance weighted</text>
+  <text x="560" y="480" font-family="Arial" font-size="27" fill="#5D6D7E" text-anchor="middle">198</text>
+  <text x="660" y="480" font-family="Arial" font-size="29" fill="#2C3E50"><tspan font-weight="bold">2.34</tspan> <tspan fill="#5D6D7E">(2.23–2.46)</tspan></text>
+  <text x="1090" y="480" font-family="Arial" font-size="27" fill="#5D6D7E">1.66 × 10<tspan font-size="19" dy="-11">−257</tspan></text>
+  <line x1="1917.2" y1="470" x2="1969.3" y2="470" stroke="#1A5276" stroke-width="5"/>
+  <line x1="1917.2" y1="456" x2="1917.2" y2="484" stroke="#1A5276" stroke-width="5"/>
+  <line x1="1969.3" y1="456" x2="1969.3" y2="484" stroke="#1A5276" stroke-width="5"/>
+  <rect x="1928.2" y="454.9" width="30.2" height="30.2" fill="#1A5276" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="140" y="562" font-family="Arial" font-size="29" fill="#2C3E50">MR-Egger</text>
+  <text x="560" y="562" font-family="Arial" font-size="27" fill="#5D6D7E" text-anchor="middle">198</text>
+  <text x="660" y="562" font-family="Arial" font-size="29" fill="#2C3E50"><tspan font-weight="bold">2.30</tspan> <tspan fill="#5D6D7E">(1.84–2.88)</tspan></text>
+  <text x="1090" y="562" font-family="Arial" font-size="27" fill="#5D6D7E">7.85 × 10<tspan font-size="19" dy="-11">−12</tspan></text>
+  <line x1="1813.1" y1="552" x2="2053.0" y2="552" stroke="#2E86C1" stroke-width="5"/>
+  <line x1="1813.1" y1="538" x2="1813.1" y2="566" stroke="#2E86C1" stroke-width="5"/>
+  <line x1="2053.0" y1="538" x2="2053.0" y2="566" stroke="#2E86C1" stroke-width="5"/>
+  <rect x="1925.6" y="544.5" width="15.0" height="15.0" fill="#2E86C1" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="140" y="644" font-family="Arial" font-size="29" fill="#2C3E50">Weighted median</text>
+  <text x="560" y="644" font-family="Arial" font-size="27" fill="#5D6D7E" text-anchor="middle">198</text>
+  <text x="660" y="644" font-family="Arial" font-size="29" fill="#2C3E50"><tspan font-weight="bold">2.28</tspan> <tspan fill="#5D6D7E">(2.14–2.42)</tspan></text>
+  <text x="1090" y="644" font-family="Arial" font-size="27" fill="#5D6D7E">9.69 × 10<tspan font-size="19" dy="-11">−155</tspan></text>
+  <line x1="1895.1" y1="634" x2="1960.2" y2="634" stroke="#5DADE2" stroke-width="5"/>
+  <line x1="1895.1" y1="620" x2="1895.1" y2="648" stroke="#5DADE2" stroke-width="5"/>
+  <line x1="1960.2" y1="620" x2="1960.2" y2="648" stroke="#5DADE2" stroke-width="5"/>
+  <rect x="1914.5" y="620.8" width="26.3" height="26.3" fill="#5DADE2" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="120" y="734" font-family="Arial" font-size="34" font-weight="bold" fill="#922B21">Anxiety disorders → MDD</text>
+  <text x="140" y="788" font-family="Arial" font-size="29" fill="#2C3E50">Inverse variance weighted</text>
+  <text x="560" y="788" font-family="Arial" font-size="27" fill="#5D6D7E" text-anchor="middle">50</text>
+  <text x="660" y="788" font-family="Arial" font-size="29" fill="#2C3E50"><tspan font-weight="bold">1.68</tspan> <tspan fill="#5D6D7E">(1.60–1.76)</tspan></text>
+  <text x="1090" y="788" font-family="Arial" font-size="27" fill="#5D6D7E">1.97 × 10<tspan font-size="19" dy="-11">−104</tspan></text>
+  <line x1="1739.2" y1="778" x2="1789.2" y2="778" stroke="#922B21" stroke-width="5"/>
+  <line x1="1739.2" y1="764" x2="1739.2" y2="792" stroke="#922B21" stroke-width="5"/>
+  <line x1="1789.2" y1="764" x2="1789.2" y2="792" stroke="#922B21" stroke-width="5"/>
+  <rect x="1748.7" y="762.5" width="31.0" height="31.0" fill="#922B21" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="140" y="870" font-family="Arial" font-size="29" fill="#2C3E50">MR-Egger</text>
+  <text x="560" y="870" font-family="Arial" font-size="27" fill="#5D6D7E" text-anchor="middle">50</text>
+  <text x="660" y="870" font-family="Arial" font-size="29" fill="#2C3E50"><tspan font-weight="bold">1.28</tspan> <tspan fill="#5D6D7E">(1.06–1.55)</tspan></text>
+  <text x="1090" y="870" font-family="Arial" font-size="27" fill="#5D6D7E">1.34 × 10<tspan font-size="19" dy="-11">−2</tspan></text>
+  <line x1="1518.8" y1="860" x2="1721.0" y2="860" stroke="#CB4335" stroke-width="5"/>
+  <line x1="1518.8" y1="846" x2="1518.8" y2="874" stroke="#CB4335" stroke-width="5"/>
+  <line x1="1721.0" y1="846" x2="1721.0" y2="874" stroke="#CB4335" stroke-width="5"/>
+  <rect x="1612.0" y="852.1" width="15.8" height="15.8" fill="#CB4335" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="140" y="952" font-family="Arial" font-size="29" fill="#2C3E50">Weighted median</text>
+  <text x="560" y="952" font-family="Arial" font-size="27" fill="#5D6D7E" text-anchor="middle">50</text>
+  <text x="660" y="952" font-family="Arial" font-size="29" fill="#2C3E50"><tspan font-weight="bold">1.63</tspan> <tspan fill="#5D6D7E">(1.55–1.72)</tspan></text>
+  <text x="1090" y="952" font-family="Arial" font-size="27" fill="#5D6D7E">3.96 × 10<tspan font-size="19" dy="-11">−72</tspan></text>
+  <line x1="1721.8" y1="942" x2="1779.2" y2="942" stroke="#EC7063" stroke-width="5"/>
+  <line x1="1721.8" y1="928" x2="1721.8" y2="956" stroke="#EC7063" stroke-width="5"/>
+  <line x1="1779.2" y1="928" x2="1779.2" y2="956" stroke="#EC7063" stroke-width="5"/>
+  <rect x="1736.3" y="927.8" width="28.4" height="28.4" fill="#EC7063" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="1460" y1="1058" x2="2110" y2="1058" stroke="#2C3E50" stroke-width="3"/>
+  <line x1="1487.5" y1="1058" x2="1487.5" y2="1072" stroke="#2C3E50" stroke-width="3"/>
+  <text x="1487.5" y="1110" font-family="Arial" font-size="26" fill="#5D6D7E" text-anchor="middle">1.0</text>
+  <line x1="1704.5" y1="1058" x2="1704.5" y2="1072" stroke="#2C3E50" stroke-width="3"/>
+  <text x="1704.5" y="1110" font-family="Arial" font-size="26" fill="#5D6D7E" text-anchor="middle">1.5</text>
+  <line x1="1858.4" y1="1058" x2="1858.4" y2="1072" stroke="#2C3E50" stroke-width="3"/>
+  <text x="1858.4" y="1110" font-family="Arial" font-size="26" fill="#5D6D7E" text-anchor="middle">2</text>
+  <line x1="1977.9" y1="1058" x2="1977.9" y2="1072" stroke="#2C3E50" stroke-width="3"/>
+  <text x="1977.9" y="1110" font-family="Arial" font-size="26" fill="#5D6D7E" text-anchor="middle">2.5</text>
+  <line x1="2075.5" y1="1058" x2="2075.5" y2="1072" stroke="#2C3E50" stroke-width="3"/>
+  <text x="2075.5" y="1110" font-family="Arial" font-size="26" fill="#5D6D7E" text-anchor="middle">3</text>
+  <text x="1785" y="1162" font-family="Arial" font-size="30" font-weight="bold" fill="#2C3E50" text-anchor="middle">Odds ratio (log₁₀ scale)</text>
+  <text x="140" y="1250" font-family="Arial" font-size="24" fill="#7F8C8D">Estimates are per one log-odds increase in genetically predicted liability to the exposure. Instruments were clumped against the 1000 Genomes European reference panel.</text>
+  <text x="140" y="1290" font-family="Arial" font-size="24" fill="#7F8C8D">Box area is proportional to the inverse-variance weight (1/SE²); horizontal bars denote 95% confidence intervals. The dashed vertical line marks the null (OR = 1).</text>
+  <text x="140" y="1330" font-family="Arial" font-size="24" fill="#7F8C8D">MDD, major depressive disorder; OR, odds ratio; CI, confidence interval; SNP, single-nucleotide polymorphism.</text>
+</svg>

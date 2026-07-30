@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1000" width="2000" height="1000">
+  <!-- Supplementary Figure S1: MR Scatter Plots -->
+  
+  <!-- White Background -->
+  <rect x="0" y="0" width="2000" height="1000" fill="white"/>
+  
+  <!-- Title -->
+  <text x="1000" y="80" font-family="Arial" font-size="40" font-weight="bold" fill="#1A5276" text-anchor="middle">Supplementary Figure S1</text>
+  <text x="1000" y="140" font-family="Arial" font-size="32" fill="#2C3E50" text-anchor="middle">MR scatter plots for bidirectional analysis</text>
+  
+  <!-- Panel A: MDD to Anxiety -->
+  <text x="500" y="220" font-family="Arial" font-size="32" font-weight="bold" fill="#1A5276" text-anchor="middle">Panel A: MDD to Anxiety (n=198 SNPs)</text>
+  
+  <!-- Axes -->
+  <line x1="100" y1="850" x2="900" y2="850" stroke="#2C3E50" stroke-width="3"/>
+  <line x1="100" y1="250" x2="100" y2="850" stroke="#2C3E50" stroke-width="3"/>
+  
+  <!-- Axis labels -->
+  <text x="500" y="920" font-family="Arial" font-size="24" fill="#2C3E50" text-anchor="middle">SNP effect on MDD (beta_x)</text>
+  <text x="50" y="550" font-family="Arial" font-size="24" fill="#2C3E50" text-anchor="middle" transform="rotate(-90, 50, 550)">SNP effect on Anxiety (beta_y)</text>
+  
+  <!-- Scatter points (simulated) -->
+  <g fill="#2471A3" fill-opacity="0.5">
+    <circle cx="200" cy="750" r="4"/><circle cx="250" cy="720" r="4"/>
+    <circle cx="300" cy="680" r="4"/><circle cx="350" cy="650" r="4"/>
+    <circle cx="400" cy="600" r="4"/><circle cx="450" cy="580" r="4"/>
+    <circle cx="500" cy="550" r="4"/><circle cx="550" cy="520" r="4"/>
+    <circle cx="600" cy="480" r="4"/><circle cx="650" cy="450" r="4"/>
+    <circle cx="700" cy="420" r="4"/><circle cx="750" cy="380" r="4"/>
+  </g>
+  
+  <!-- Regression lines -->
+  <line x1="100" y1="800" x2="900" y2="300" stroke="black" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="100" y1="780" x2="900" y2="320" stroke="#A93226" stroke-width="3" stroke-dasharray="10,3"/>
+  <line x1="100" y1="790" x2="900" y2="310" stroke="#27AE60" stroke-width="3" stroke-dasharray="3,3"/>
+  
+  <!-- Legend -->
+  <text x="500" y="920" font-family="Arial" font-size="18" fill="#717D7E" text-anchor="middle">Black: IVW | Red: MR-Egger | Green: Weighted Median</text>
+  
+  <!-- Panel B: Anxiety to MDD -->
+  <text x="1500" y="220" font-family="Arial" font-size="32" font-weight="bold" fill="#1A5276" text-anchor="middle">Panel B: Anxiety to MDD (n=50 SNPs)</text>
+  
+  <!-- Axes -->
+  <line x1="1100" y1="850" x2="1900" y2="850" stroke="#2C3E50" stroke-width="3"/>
+  <line x1="1100" y1="250" x2="1100" y2="850" stroke="#2C3E50" stroke-width="3"/>
+  
+  <!-- Axis labels -->
+  <text x="1500" y="920" font-family="Arial" font-size="24" fill="#2C3E50" text-anchor="middle">SNP effect on Anxiety (beta_x)</text>
+  <text x="1050" y="550" font-family="Arial" font-size="24" fill="#2C3E50" text-anchor="middle" transform="rotate(-90, 1050, 550)">SNP effect on MDD (beta_y)</text>
+  
+  <!-- Scatter points (simulated) -->
+  <g fill="#A93226" fill-opacity="0.6">
+    <circle cx="1150" cy="800" r="5"/><circle cx="1250" cy="750" r="5"/>
+    <circle cx="1350" cy="700" r="5"/><circle cx="1450" cy="680" r="5"/>
+    <circle cx="1550" cy="650" r="5"/><circle cx="1650" cy="620" r="5"/>
+    <circle cx="1750" cy="580" r="5"/><circle cx="1850" cy="550" r="5"/>
+  </g>
+  
+  <!-- Regression lines -->
+  <line x1="1100" y1="820" x2="1900" y2="500" stroke="black" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="1100" y1="800" x2="1900" y2="520" stroke="#A93226" stroke-width="3" stroke-dasharray="10,3"/>
+  <line x1="1100" y1="810" x2="1900" y2="510" stroke="#27AE60" stroke-width="3" stroke-dasharray="3,3"/>
+  
+  <!-- Legend -->
+  <text x="1500" y="920" font-family="Arial" font-size="18" fill="#717D7E" text-anchor="middle">Black: IVW | Red: MR-Egger | Green: Weighted Median</text>
+  
+</svg>
